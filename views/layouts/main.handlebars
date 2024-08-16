@@ -14,12 +14,17 @@
     <h1>Adopt a paw today!</h1>
   </header>
   <nav>
+
+{{!-- Here we need to input something that will allow the page to redirect or soupport a bootstrap capable modal.  --}}
+
     <a href="/">Home</a>
-    {{#if !loggedIn}}
+    {{#if loggedIn}}
     <button id="logout" class="btn-no-style">Logout</button>
     {{else}}
     <a href="/login">Login</a>
     {{/if}}
+
+
   </nav>
   <main>
     <aside>
