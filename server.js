@@ -1,34 +1,15 @@
-const exphbs = require('express-handlebars');
-const helpers = require('./utils/helpers');
 
-
-
-const app = express();
-const PORT = process.env.PORT || 3001;
-
-
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(routes);
-
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
-});
-
-/**const express = require('express');
+const express = require('express');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const exphbs = require('express-handlebars');
 const path = require('path');
-const routes = require('./routes/htmlRoutes');
+const routes = require('./routes/homeRoutes.js/homeRoutes');
+const Pet = require('./models/pet');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -53,4 +34,4 @@ app.use('/', routes);
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
- */
+ 
