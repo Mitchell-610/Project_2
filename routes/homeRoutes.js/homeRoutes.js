@@ -1,7 +1,6 @@
-
 const express = require('express');
 const router = express.Router();
-const { Pet } = require('../../models/index');
+const { Pet } = require('../../models');
 
 // Home Route
 router.get('/', async (req, res) => {

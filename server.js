@@ -1,4 +1,4 @@
-
+const sequelize = require('./config/connection')
 const express = require('express');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
@@ -7,6 +7,7 @@ const path = require('path');
 const routes = require('./routes/homeRoutes.js/homeRoutes');
 const Pet = require('./models/pet');
 require('dotenv').config();
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -31,7 +32,8 @@ app.set('view engine', 'handlebars');
 // Use routes
 app.use('/', routes);
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+//Change back to false when db is setup correctly.
+sequelize.sync({ force: true }).then(() => {
+  app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`)
+)
 });
- 
