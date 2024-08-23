@@ -11,10 +11,13 @@ CREATE TABLE owner (
 CREATE TABLE pet (
     id SERIAL PRIMARY KEY,
     owner_id INT,
-    FOREIGN KEY (movie_id)
-    REFERENCES movies(id)
-    ON DELETE SET NULL
+    name VARCHAR (50),
+    species VARCHAR (50),
+    sex VARCHAR (8),
+    birth VARCHAR (20),
+    FOREIGN KEY (owner_id)
+    REFERENCES owner(id)
 );
 
-
--- (name, owner, species, sex, birth, death)('Charlie', 'Alice', 'bird', 'm', '2016-01-18',
+SELECT * FROM pet;
+SELECT * FROM owner;
