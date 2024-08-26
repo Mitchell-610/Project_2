@@ -1,19 +1,75 @@
-{{!-- Handlebars Partial for Displaying Cats Available for Adoption --}}
-<section class="cat-gallery">
-  {{#each cats}}
-    <div class="cat-card">
-      <a href="/cat/{{id}}">
-        <header>{{name}}</header>
-        <div class="cat-image">
-          <!-- Placeholder for image; can be replaced with actual image URL later -->
-          <img src="/images/placeholder-cat.jpg" alt="{{name}}">
-        </div>
-        <div class="cat-info">
-          <p><strong>Owner:</strong> {{owner}}</p>
-          <p><strong>Birth Date:</strong> {{birth}}</p>
-          {{!-- You can include more details here if needed --}}
-        </div>
-      </a>
+{{!-- adopt-cat.handlebars --}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adopt a Cat</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>Adopt a Cat</h1>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/adopt-cat">Adopt a Cat</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/adopt-dog">Adopt a Dog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pending">Pending Applications</a>
+        </li>
+        {{#if loggedIn}}
+        <li class="nav-item">
+          <button id="logout" class="btn btn-link nav-link">Logout</button>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        {{/if}}
+      </ul>
     </div>
-  {{/each}}
-</section>
+  </nav>
+
+  <main class="container mt-4">
+    <aside>
+      <h2>Find your new feline friend!</h2>
+    </aside>
+
+    <div class="gallery">
+      {{#each cats}}
+        <div class="card">
+          <img src="/images/default-cat.jpg" alt="{{name}}'s image">
+          <h3>{{name}}</h3>
+          <p>Owner: {{owner}}</p>
+          <p>Birth Date: {{birth}}</p>
+          <p>Sex: {{#if (eq sex "m")}}Male{{else}}Female{{/if}}</p>
+        </div>
+      {{/each}}
+    </div>
+  </main>
+
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
+  <!-- Bootstrap and jQuery JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+

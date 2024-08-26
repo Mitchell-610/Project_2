@@ -1,27 +1,31 @@
+{{!-- pending-applications.handlebars --}}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adopt a Dog - Adopt a Paw</title>
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <title>Pending Applications</title>
+  <link rel="stylesheet" type="text/css" href="public/css/style.css">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
   <header>
-    <h1>Adopt a Dog</h1>
+    <h1>Pending Applications</h1>
   </header>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/adopt-dog">Adopt a Dog</a>
+          <a class="nav-link" href="/adopt-cat">Adopt a Cat</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/adopt-cat">Adopt a Cat</a>
+          <a class="nav-link" href="/adopt-dog">Adopt a Dog</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/pending">Pending Applications</a>
@@ -40,36 +44,35 @@
   </nav>
 
   <main class="container mt-4">
-    <h2>Available Dogs for Adoption</h2>
-    <div id="dog-gallery" class="row">
-      {{> dogPartial dogs=dogs}}
+    <aside>
+      <h2>Review the pending applications below.</h2>
+    </aside>
+
+    <div class="applications-list">
+      {{#if applications.length}}
+        <ul class="list-group">
+          {{#each applications}}
+            <li class="list-group-item">
+              <h5>{{applicantName}}</h5>
+              <p><strong>Pet:</strong> {{petName}} ({{petSpecies}})</p>
+              <p><strong>Status:</strong> {{status}}</p>
+            </li>
+          {{/each}}
+        </ul>
+      {{else}}
+        <p>No pending applications at the moment.</p>
+      {{/if}}
     </div>
   </main>
 
-  <!-- Handlebars Partial Template for Dog Cards -->
-  <script id="dog-partial-template" type="text/x-handlebars-template">
-    {{#each dogs}}
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="/images/{{this.image}}" class="card-img-top" alt="{{this.name}}">
-          <div class="card-body">
-            <h5 class="card-title">{{this.name}}</h5>
-            <p class="card-text">Owner: {{this.owner}}</p>
-            <p class="card-text">Sex: {{this.sex}}</p>
-            <p class="card-text">Birth Date: {{this.birth}}</p>
-          </div>
-        </div>
-      </div>
-    {{/each}}
-  </script>
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 
-  <!-- JavaScript -->
+  <!-- Bootstrap and jQuery JavaScript -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="/handlebars.min.js"></script>
-  <script src="/js/adopt-dog.js"></script>
 </body>
 
 </html>
-
