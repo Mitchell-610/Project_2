@@ -1,1 +1,72 @@
-<p>I'm working!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Adopt a Paw</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1 class="my-4">Welcome to Adopt a Paw!</h1>
+    </div>
+  </header>
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Home</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/adopt-dog">Adopt a Dog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/adopt-cat">Adopt a Cat</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pending">Pending Applications</a>
+        </li>
+        {{#if loggedIn}}
+        <li class="nav-item">
+          <button id="logout" class="btn btn-link nav-link">Logout</button>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container mt-4">
+    <div class="jumbotron">
+      <h2>Find Your New Best Friend</h2>
+      <p class="lead">Explore our collection of wonderful pets looking for a loving home. Whether you're interested in adopting a dog, a cat, or checking out pending applications, we have something for everyone.</p>
+      <a class="btn btn-primary btn-lg" href="/adopt-dog" role="button">Adopt a Dog</a>
+      <a class="btn btn-primary btn-lg" href="/adopt-cat" role="button">Adopt a Cat</a>
+    </div>
+
+    <section class="text-center mt-4">
+      <h3>How It Works</h3>
+      <p>1. Browse our available pets.</p>
+      <p>2. Fill out an adoption application.</p>
+      <p>3. Meet your new furry friend!</p>
+    </section>
+  </main>
+
+  <footer class="bg-light text-center py-4">
+    <p>&copy; 2024 Adopt a Paw. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="/js/home.js"></script>
+</body>
+
+</html>

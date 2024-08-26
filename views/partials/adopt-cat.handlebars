@@ -1,0 +1,19 @@
+{{!-- Handlebars Partial for Displaying Cats Available for Adoption --}}
+<section class="cat-gallery">
+  {{#each cats}}
+    <div class="cat-card">
+      <a href="/cat/{{id}}">
+        <header>{{name}}</header>
+        <div class="cat-image">
+          <!-- Placeholder for image; can be replaced with actual image URL later -->
+          <img src="/images/placeholder-cat.jpg" alt="{{name}}">
+        </div>
+        <div class="cat-info">
+          <p><strong>Owner:</strong> {{owner}}</p>
+          <p><strong>Birth Date:</strong> {{birth}}</p>
+          {{!-- You can include more details here if needed --}}
+        </div>
+      </a>
+    </div>
+  {{/each}}
+</section>
