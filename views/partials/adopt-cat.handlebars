@@ -1,4 +1,3 @@
-{{!-- adopt-cat.handlebars --}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,13 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adopt a Cat</title>
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="public/css/style.css">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
   <header>
-    <h1>Adopt a Cat</h1>
+    <h1 class="text-center mt-4">Adopt a Cat</h1>
   </header>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/">Home</a>
@@ -45,17 +44,21 @@
 
   <main class="container mt-4">
     <aside>
-      <h2>Find your new feline friend!</h2>
+      <h2 class="text-center mb-4">Find your new feline friend!</h2>
     </aside>
 
-    <div class="gallery">
+    <div class="row">
       {{#each cats}}
-        <div class="card">
-          <img src="/images/default-cat.jpg" alt="{{name}}'s image">
-          <h3>{{name}}</h3>
-          <p>Owner: {{owner}}</p>
-          <p>Birth Date: {{birth}}</p>
-          <p>Sex: {{#if (eq sex "m")}}Male{{else}}Female{{/if}}</p>
+        <div class="col-md-3 mb-4">
+          <div class="card">
+            <img src="/images/cats/{{this.image}}" alt="{{this.name}}'s image" class="card-img-top">
+            <div class="card-body text-center">
+              <h5 class="card-title">{{this.name}}</h5>
+              <p class="card-text">Owner: {{this.owner}}</p>
+              <p class="card-text">Birth Date: {{this.birth}}</p>
+              <p class="card-text">Sex: {{#if (eq this.sex "m")}}Male{{else}}Female{{/if}}</p>
+            </div>
+          </div>
         </div>
       {{/each}}
     </div>
@@ -72,4 +75,5 @@
 </body>
 
 </html>
+
 
