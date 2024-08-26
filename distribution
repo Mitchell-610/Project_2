@@ -1,0 +1,76 @@
+<!-- 
+
+Use Node.js and Express.js to create a RESTful API.
+
+We will use dogs and cats to produce a seemless API.
+
+
+Use Handlebars.js as the template engine.
+
+Use handlebars to capture html setting and placement so we can have a set footer and header.
+
+
+Use PostgreSQL and the Sequelize ORM for the database.
+
+Use schema.sql to create a database that will allow users to store information about them and previous animals they've adopted.  
+
+
+Have both GET and POST routes for retrieving and adding new data.
+
+Use a get route to display homepage, cats, dogs, and the foster page. We can use a POST route to allow users to put dogs/cats up for adoption.
+
+
+Use at least one new library, package, or technology that we haven’t discussed.
+
+WE NEED TO FIGURE OUT!!!
+
+
+Have a folder structure that meets the MVC paradigm.
+
+So far setup, PLEASE APPLY MORE IF NEEDED OR MOVE FOR CORRECT FILES.
+
+
+Include authentication (express-session and cookies).
+
+Here we will use the login/sign-up to encript the password and username/email.
+
+
+Protect API keys and sensitive information with environment variables.
+
+Use a KEY to apply our encription.
+
+
+Be deployed using Render (with data).
+
+Create a live application via RENDER.
+
+
+Have a polished UI.
+
+Allow users to interacvt freely without error, adjustable screen via media screen in css, allows users to POST!
+
+
+Be responsive.
+
+Act how we want it to, no-one likes using a website that doesn't load something.
+
+
+Be interactive (i.e., accept and respond to user input).
+
+This will be covered within the get and post routes.
+
+
+Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
+
+Code smart make sure everything is correct, not sure just ask!
+
+
+Links to the deployed application and the GitHub repository. Use the Deploy with Render and PostgreSQL post on The Full-Stack Blog if you need a reminder on how to deploy to Render.
+
+
+
+
+
+
+
+ -->
