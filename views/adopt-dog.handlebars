@@ -1,22 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - Adopt a Paw</title>
+  <title>Adopt a Dog - Adopt a Paw</title>
   <link rel="stylesheet" type="text/css" href="public/css/style.css">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
   <header>
-    <div class="container">
-      <h1 class="my-4">Welcome to Adopt a Paw!</h1>
-    </div>
+    <h1>Adopt a Dog</h1>
   </header>
-  
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/">Home</a>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -42,31 +38,38 @@
       </ul>
     </div>
   </nav>
-  <main class="container mt-4">
-    <div class="jumbotron">
-      <h2>Find Your New Best Friend</h2>
-      <p class="lead">Explore our collection of wonderful pets looking for a loving home. Whether you're interested in adopting a dog, a cat, or checking out pending applications, we have something for everyone.</p>
-      <a class="btn btn-primary btn-lg" href="/adopt-dog" role="button">Adopt a Dog</a>
-      <a class="btn btn-primary btn-lg" href="/adopt-cat" role="button">Adopt a Cat</a>
-    </div>
 
-    <section class="text-center mt-4">
-      <h3>How It Works</h3>
-      <p>1. Browse our available pets.</p>
-      <p>2. Fill out an adoption application.</p>
-      <p>3. Meet your new furry friend!</p>
-    </section>
+  <main class="container mt-4">
+    <h2>Available Dogs for Adoption</h2>
+    <div id="dog-gallery" class="row">
+      {{> dogPartial dogs=dogs}}
+    </div>
   </main>
 
-  <footer class="bg-light text-center py-4">
-    <p>&copy; 2024 Adopt a Paw. All rights reserved.</p>
-  </footer>
+  <!-- Handlebars Partial Template for Dog Cards -->
+  <script id="dog-partial-template" type="text/x-handlebars-template">
+    {{#each dogs}}
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="/images/{{this.image}}" class="card-img-top" alt="{{this.name}}">
+          <div class="card-body">
+            <h5 class="card-title">{{this.name}}</h5>
+            <p class="card-text">Owner: {{this.owner}}</p>
+            <p class="card-text">Sex: {{this.sex}}</p>
+            <p class="card-text">Birth Date: {{this.birth}}</p>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </script>
 
   <!-- JavaScript -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="/js/home.js"></script>
+  <script src="/handlebars.min.js"></script>
+  <script src="/js/adopt-dog.js"></script>
 </body>
 
 </html>
+

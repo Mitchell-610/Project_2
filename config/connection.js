@@ -10,9 +10,9 @@ const sequelize = new Sequelize(
   {
     host: 'localhost', // Database host
     dialect: 'postgres', // Database dialect (e.g., 'postgres', 'mysql', 'sqlite')
-    // define: {
-    //   timestamps: false, // Example global option
-    // },
+    define: {
+      timestamps: false, // Example global option
+    },
     // Other global options can be added here
   }
 );
