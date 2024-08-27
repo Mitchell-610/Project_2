@@ -1,0 +1,29 @@
+
+  <!-- Handlebars Partial Template for Cat Cards -->
+  <script id="cat-partial-template" type="text/x-handlebars-template">
+    {{#each cats}}
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="/images/{{this.image}}" class="card-img-top" alt="{{this.name}}">
+          <div class="card-body">
+            <h5 class="card-title">{{this.name}}</h5>
+            <p class="card-text">Owner: {{this.owner}}</p>
+            <p class="card-text">Sex: {{this.sex}}</p>
+            <p class="card-text">Birth Date: {{this.birth}}</p>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </script>
+
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="/handlebars.min.js"></script>
+  <script src="/js/adopt-cat.js"></script>
+</body>
+
+</html>
+
+
