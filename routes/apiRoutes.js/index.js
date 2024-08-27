@@ -1,9 +1,13 @@
 //api,index.js
 const router = require('express').Router();
-const userRoutes = require('./userRoutes');
-const projectRoutes = require('./projectRoutes');
+const dogRoutes = require('./dogRoutes');
+const catRoutes = require('./catRoutes');
+const login = require('./loginRoutes');
 
-router.use('/user', userRoutes);
-router.use('/projects', projectRoutes);
+
+router.use('/dog', dogRoutes);
+router.use('/cat', catRoutes);
+router.use('/login', login);
+
 
 module.exports = router;
