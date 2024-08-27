@@ -33,7 +33,7 @@ app.set('view engine', 'handlebars');
 app.use('/', routes);
 
 //Change back to false when db is setup correctly.
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`)
 )
 });
