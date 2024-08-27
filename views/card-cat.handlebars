@@ -1,0 +1,13 @@
+{{#each pets}}
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <img src="/images/{{this.image}}" class="card-img-top" alt="{{this.name}}">
+      <div class="card-body">
+        <h5 class="card-title">{{this.name}}</h5>
+        <p class="card-text">Owner: {{this.owner}}</p>
+        <p class="card-text">Sex: {{this.sex}}</p>
+        <p class="card-text">Birth Date: {{this.birth}}</p>
+      </div>
+    </div>
+  </div>
+{{/each}}

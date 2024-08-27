@@ -1,29 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
 
-  <!-- Handlebars Partial Template for Cat Cards -->
-  <script id="cat-partial-template" type="text/x-handlebars-template">
-    {{#each cats}}
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="/images/{{this.image}}" class="card-img-top" alt="{{this.name}}">
-          <div class="card-body">
-            <h5 class="card-title">{{this.name}}</h5>
-            <p class="card-text">Owner: {{this.owner}}</p>
-            <p class="card-text">Sex: {{this.sex}}</p>
-            <p class="card-text">Birth Date: {{this.birth}}</p>
-          </div>
-        </div>
-      </div>
-    {{/each}}
-  </script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adopt a Cat - Adopt a Paw</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1 class="my-4">Adopt a Cat</h1>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Home</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/adopt-dog">Adopt a Dog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/adopt-cat">Adopt a Cat</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pending">Pending Applications</a>
+        </li>
+        {{#if loggedIn}}
+        <li class="nav-item">
+          <button id="logout" class="btn btn-link nav-link">Logout</button>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container mt-4">
+    <div class="row">
+      {{> cat-card}} <!-- This should render the cat-card partial -->
+    </div>
+  </main>
+
+  <footer class="bg-light text-center py-4">
+    <p>&copy; 2024 Adopt a Paw. All rights reserved.</p>
+  </footer>
 
   <!-- JavaScript -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="/handlebars.min.js"></script>
   <script src="/js/adopt-cat.js"></script>
 </body>
 
 </html>
-
-
