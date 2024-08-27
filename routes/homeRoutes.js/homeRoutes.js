@@ -15,7 +15,12 @@ router.get('/', async (req, res) => {
 
 router.get('/login', async (req, res) => {
   try {
+Basic-setup
+    const pets = await Pet.findAll();
+    res.render('login', { pets });
+
     res.render('login');
+css
   } catch (err) {
     console.error(err);
     res.status(500).send('Server Error');

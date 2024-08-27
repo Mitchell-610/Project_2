@@ -1,142 +1,66 @@
-/* Global Styles */
+Basic-setup
+
+{
+     box-sizing: border-box !important;
+     transition: ease all 0.5s;
+}
+
+html {
+     scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
   margin: 0;
   padding: 0;
-  color: #333;
-  background-color: #f8f9fa;
+  background-color: #f4f4f4;
+  background-image: url('path/to/your/dogs-playing-image.jpg');
+  background-size: cover; /* Ensure the image covers the entire background */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
 }
 
 header {
-  background-color: #007bff;
-  color: white;
-  padding: 20px 0;
+  background-color: #333;
+  color: #0c737a;
+  padding: 10px 0;
   text-align: center;
 }
 
-h1, h2 {
-  margin: 0;
-  padding: 0;
+.navbar-brand {
+  background-color: #9fdad0;
 }
 
-a {
-  text-decoration: none;
-  color: #007bff;
+main {
+  padding: 20px;
+  background-color: blue;
+  opacity: 0.8; /* Optional: Adjust opacity to make the background image more visible */
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-nav.navbar {
-  margin-bottom: 20px;
-}
-
-.nav-link {
-  color: #007bff;
-}
-
-.nav-link:hover {
-  color: #0056b3;
-}
-
-/* Container and Main Content */
-.container {
-  margin-top: 20px;
-}
-
-aside {
-  background-color: #e9ecef;
-  padding: 10px;
+form {
+  background-color: #fff;
+  padding: 20px;
   border-radius: 5px;
-  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-/* Card Styles */
-.card {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  overflow: hidden;
-  width: 100%;
-  max-width: 300px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.card img {
-  width: 100%;
-  height: auto;
+label {
   display: block;
+  margin-top: 10px;
 }
 
-.card header {
-  background-color: #007bff;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  font-size: 1.2em;
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
 }
 
-/* Button Styles */
-.btn-no-style {
-  background: none;
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
   border: none;
-  padding: 0;
-  cursor: pointer;
-  color: #007bff;
-}
-
-.btn-no-style:hover {
-  color: #0056b3;
-}
-
-.btn-primary {
-  background-color: #007bff;
-  border: none;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
-}
-
-/* Modal Styles */
-.modal-content {
   border-radius: 5px;
-}
-
-.modal-header {
-  border-bottom: 1px solid #ddd;
-}
-
-.modal-footer {
-  border-top: 1px solid #ddd;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .gallery {
-    flex-direction: column;
-  }
-
-  .card {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 576px) {
-  header {
-    padding: 10px 0;
-  }
-
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+  cursor: pointer;
 }
