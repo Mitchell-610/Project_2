@@ -41,8 +41,10 @@ Pet.init(
   },
   {
     sequelize,
-    modelName: 'Pet',
-    timestamps: false
+    modelName: 'pet',
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true
   }
 );
 

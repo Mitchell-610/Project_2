@@ -1,30 +1,31 @@
+{{!-- pending-applications.handlebars --}}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adopt a Cat - Adopt a Paw</title>
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <title>Pending Applications</title>
+  <link rel="stylesheet" type="text/css" href="public/css/style.css">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
   <header>
-    <div class="container">
-      <h1 class="my-4">Adopt a Cat</h1>
-    </div>
+    <h1>Pending Applications</h1>
   </header>
-
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/adopt-dog">Adopt a Dog</a>
+          <a class="nav-link" href="/adopt-cat">Adopt a Cat</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/adopt-cat">Adopt a Cat</a>
+          <a class="nav-link" href="/adopt-dog">Adopt a Dog</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/pending">Pending Applications</a>
@@ -43,20 +44,35 @@
   </nav>
 
   <main class="container mt-4">
-    <div class="row">
-      {{> cat-card}} <!-- This should render the cat-card partial -->
+    <aside>
+      <h2>Review the pending applications below.</h2>
+    </aside>
+
+    <div class="applications-list">
+      {{#if applications.length}}
+        <ul class="list-group">
+          {{#each applications}}
+            <li class="list-group-item">
+              <h5>{{applicantName}}</h5>
+              <p><strong>Pet:</strong> {{petName}} ({{petSpecies}})</p>
+              <p><strong>Status:</strong> {{status}}</p>
+            </li>
+          {{/each}}
+        </ul>
+      {{else}}
+        <p>No pending applications at the moment.</p>
+      {{/if}}
     </div>
   </main>
 
-  <footer class="bg-light text-center py-4">
-    <p>&copy; 2024 Adopt a Paw. All rights reserved.</p>
-  </footer>
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 
-  <!-- JavaScript -->
+  <!-- Bootstrap and jQuery JavaScript -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="/js/adopt-cat.js"></script>
 </body>
 
 </html>
