@@ -41,9 +41,10 @@ Pet.init(
   },
   {
     sequelize,
-    tableName: 'pets_db',
-    modelName: 'Pet',
-    timestamps: false
+    modelName: 'pet',
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true
   }
 );
 

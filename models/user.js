@@ -48,8 +48,7 @@ User.init(
       },
     },
     sequelize,
-    modelName: 'User',
-    tableName: 'pets_db',
+    modelName: 'user',
     timestamps: false,
     freezeTableName: true,
     underscored: true

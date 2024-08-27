@@ -4,7 +4,7 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const exphbs = require('express-handlebars');
 const path = require('path');
-const routes = require('./routes/homeRoutes.js/homeRoutes');
+const routes = require('./routes/index');
 const Pet = require('./models/pet');
 require('dotenv').config();
 

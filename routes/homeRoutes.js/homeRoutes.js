@@ -13,6 +13,16 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/login', async (req, res) => {
+  try {
+    const pets = await Pet.findAll();
+    res.render('login', { pets });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+});
+
 // Adopt a pet Route
 router.post('/adopt', async (req, res) => {
   try {
