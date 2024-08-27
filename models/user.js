@@ -48,10 +48,11 @@ User.init(
       },
     },
     sequelize,
+    modelName: 'User',
+    tableName: 'pets_db',
     timestamps: false,
     freezeTableName: true,
-    underscored: true,
-    modelName: 'user',
+    underscored: true
   }
 );
 
