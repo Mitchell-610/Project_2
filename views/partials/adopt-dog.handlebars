@@ -4,14 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adopt a Cat - Adopt a Paw</title>
+  <title>Adopt a Dog - Adopt a Paw</title>
   <link rel="stylesheet" type="text/css" href="public/css/style.css">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
   <header>
-    <h1>Adopt a Cat</h1>
+    <h1>Adopt a Dog</h1>
   </header>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/">Home</a>
@@ -40,15 +40,15 @@
   </nav>
 
   <main class="container mt-4">
-    <h2>Available Cats for Adoption</h2>
-    <div id="cat-gallery" class="row">
-      {{> catPartial cats=cats}}
+    <h2>Available Dogs for Adoption</h2>
+    <div id="dog-gallery" class="row">
+      {{> dogPartial dogs=dogs}}
     </div>
   </main>
 
-  <!-- Handlebars Partial Template for Cat Cards -->
-  <script id="cat-partial-template" type="text/x-handlebars-template">
-    {{#each cats}}
+  <!-- Handlebars Partial Template for Dog Cards -->
+  <script id="dog-partial-template" type="text/x-handlebars-template">
+    {{#each dogs}}
       <div class="col-md-4 mb-4">
         <div class="card">
           <img src="/images/{{this.image}}" class="card-img-top" alt="{{this.name}}">
@@ -68,11 +68,8 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="/handlebars.min.js"></script>
-  <script src="/js/adopt-cat.js"></script>
+  <script src="/js/adopt-dog.js"></script>
 </body>
 
 </html>
-
-
-
 
