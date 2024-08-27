@@ -1,7 +1,56 @@
 
   <!-- Handlebars Partial Template for Cat Cards -->
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adopt a Cat - Adopt a Paw</title>
+  <link rel="stylesheet" type="text/css" href="public/css/style.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+  <body>
+  <header>
+    <h1>Adopt a cat</h1>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Home</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/adopt-dog">Adopt a Dog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/adopt-cat">Adopt a Cat</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pending">Pending Applications</a>
+        </li>
+        {{#if loggedIn}}
+        <li class="nav-item">
+          <button id="logout" class="btn btn-link nav-link">Logout</button>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container mt-4">
+    <h2>Available cats for Adoption</h2>
+    <div id="dog-gallery" class="row">
+      {{> catPartial cats=cats}}
+    </div>
+  </main>
+
+  <!-- Handlebars Partial Template for Dog Cards -->
   <script id="cat-partial-template" type="text/x-handlebars-template">
-    {{#each cats}}
+    {{#each dogs}}
       <div class="col-md-4 mb-4">
         <div class="card">
           <img src="/images/{{this.image}}" class="card-img-top" alt="{{this.name}}">
@@ -16,7 +65,7 @@
     {{/each}}
   </script>
 
-  <!-- JavaScript -->
+<!-- JavaScript -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -25,5 +74,3 @@
 </body>
 
 </html>
-
-
