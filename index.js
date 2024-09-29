@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const Pet = require('./pet');
+const Pet = require('./models/pet');
 
 const syncAndSeed = async () => {
   await sequelize.sync({ force: true });

@@ -1,21 +1,27 @@
 const express = require('express');
 const router = express.Router();
-const { Pet, User } = require('../../models');
+const { Pet } = require('../../models'); // Adjust the path to your models if needed
 
-
+// Define your GET route for dogs
 router.get('/', async (req, res) => {
-    try {
-      const dogs = await Pet.findAll({
-        where: {
-          species: 'dogs'  // Adjust 'type' and 'cat' to match your actual column name and value
-        }
+  try {
+    console.log('Fetching dogs...'); // This should log when the route is hit
+
+    // Query the Pet model to find all pets where species is 'dog'
+    const dogs = await Pet.findAll({
+      where: { species: 'dog' } // Make sure this matches your DB column for species
     });
-      res.render('home', { pets: dogs });
-    } catch (err) {
-      console.error(err);
-      res.status(500).send('Server Error');
-    }
-  });
+
+    // Log the dogs to ensure you're fetching the right data
+    console.log('Dogs:', dogs);
+
+    // Return the data as JSON for the client to consume
+    res.json(dogs);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+});
 
   
 // GET a single dog by id
